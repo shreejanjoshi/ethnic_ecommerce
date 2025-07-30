@@ -122,7 +122,7 @@ const StoreDetails: FC<StoreDetailsProps> = ({ data }) => {
       if (data?.id) {
         router.refresh();
       } else {
-        router.push(`/dashboard/seller/stores/`);
+        router.push(`/dashboard/seller/stores`);
       }
     } catch (error: any) {
       // Handling form submission errors
@@ -180,7 +180,6 @@ const StoreDetails: FC<StoreDetailsProps> = ({ data }) => {
                   )}
                 />
                 <FormField
-                  // @ts-ignore
                   control={form.control}
                   name="cover"
                   render={({ field }) => (
@@ -258,7 +257,7 @@ const StoreDetails: FC<StoreDetailsProps> = ({ data }) => {
                   readOnly={isLoading}
                   // @ts-ignore
                   control={form.control}
-                  name="email"
+                  name="phone"
                   render={({ field }) => (
                     <FormItem className="flex-1">
                       <FormLabel>Store phone</FormLabel>
