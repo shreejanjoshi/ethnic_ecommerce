@@ -1,7 +1,9 @@
 import ThemeToggle from "@/components/shared/theme-toggle";
+// import { updateVariantImage } from "@/migration-scripts/migrate-variantImage";
 import { UserButton } from "@clerk/nextjs";
 
 export default function Home() {
+  // await updateVariantImage();
   return (
     <div>
       <div className="w-100 flex gap-x-5 justify-end">

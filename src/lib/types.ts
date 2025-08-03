@@ -1,3 +1,4 @@
+import { getAllStoreProducts } from "@/queries/product";
 import { getAllSubCategories } from "@/queries/subCategory";
 import { Prisma } from "@prisma/client";
 
@@ -21,11 +22,11 @@ export type ProductWithVariantType = {
   variantName: string;
   variantDescription: string;
   images: { id?: string; url: string }[];
-  // variantImage: string;
+  variantImage: string;
   categoryId: string;
   subCategoryId: string;
   isSale: boolean;
-  // saleEndDate?: string;
+  saleEndDate?: string;
   brand: string;
   sku: string;
   colors: {
@@ -39,15 +40,20 @@ export type ProductWithVariantType = {
     price: number;
     discount: number;
   }[];
-  // product_specs: { id?: string; name: string; value: string }[];
-  // variant_specs: { id?: string; name: string; value: string }[];
+  product_specs: { id?: string; name: string; value: string }[];
+  variant_specs: { id?: string; name: string; value: string }[];
   keywords: string[];
   // seoTitle: string;
   // seoDescription: string;
-  // questions: { id?: string; question: string; answer: string }[];
+  questions: { id?: string; question: string; answer: string }[];
   // freeShippingForAllCountries: boolean;
   // freeShippingCountriesIds: { id?: string; label: string; value: string }[];
   // shippingFeeMethod: ShippingFeeMethod;
   createdAt: Date;
   updatedAt: Date;
 };
+
+// Store product
+export type StoreProductType = Prisma.PromiseReturnType<
+  typeof getAllStoreProducts
+>[0];
