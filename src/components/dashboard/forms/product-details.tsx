@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 // Prisma model
 import {
   type Category,
+  type OfferTag,
   type SubCategory,
   type Store,
 } from "@/generated/prisma";
@@ -99,12 +100,14 @@ import { useTheme } from "next-themes";
 interface ProductDetailsProps {
   data?: Partial<ProductWithVariantType>;
   categories: Category[];
+  offerTags: OfferTag[];
   storeUrl: string;
 }
 
 const ProductDetails: FC<ProductDetailsProps> = ({
   data,
   categories,
+  offerTags,
   storeUrl,
 }) => {
   // Initializing necessary hooks
@@ -173,7 +176,7 @@ const ProductDetails: FC<ProductDetailsProps> = ({
       images: data?.images || [],
       variantImage: data?.variantImage ? [{ url: data.variantImage }] : [],
       categoryId: data?.categoryId,
-      // offerTagId: data?.offerTagId,
+      offerTagId: data?.offerTagId,
       subCategoryId: data?.subCategoryId,
       brand: data?.brand,
       sku: data?.sku,
@@ -248,7 +251,7 @@ const ProductDetails: FC<ProductDetailsProps> = ({
           variantImage: values.variantImage[0].url,
           categoryId: values.categoryId,
           subCategoryId: values.subCategoryId,
-          // offerTagId: values.offerTagId || "",
+          offerTagId: values.offerTagId || "",
           isSale: values.isSale,
           saleEndDate: values.saleEndDate,
           brand: values.brand,
@@ -595,7 +598,7 @@ const ProductDetails: FC<ProductDetailsProps> = ({
                   )}
                 />
                 {/* Offer Tag */}
-                {/* <FormField
+                <FormField
                   readOnly={isLoading}
                   // @ts-ignore
                   control={form.control}
@@ -628,7 +631,7 @@ const ProductDetails: FC<ProductDetailsProps> = ({
                       <FormMessage />
                     </FormItem>
                   )}
-                /> */}
+                />
               </div>
               {/* </InputFieldset> */}
               {/* )} */}

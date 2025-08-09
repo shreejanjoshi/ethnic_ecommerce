@@ -5,7 +5,7 @@ import { columns } from "./columns";
 import { Plus } from "lucide-react";
 import ProductDetails from "@/components/dashboard/forms/product-details";
 import { getAllCategories } from "@/queries/category";
-// import { getAllOfferTags } from "@/queries/offer-tag";
+import { getAllOfferTags } from "@/queries/offer-tag";
 import { db } from "@/lib/db";
 
 export default async function SellerProductsPage({
@@ -17,7 +17,7 @@ export default async function SellerProductsPage({
   const products = await getAllStoreProducts(params.storeUrl);
 
   const categories = await getAllCategories();
-  // const offerTags = await getAllOfferTags();
+  const offerTags = await getAllOfferTags();
 
   // const countries = await db.country.findMany({
   //   orderBy: {
@@ -35,7 +35,7 @@ export default async function SellerProductsPage({
       modalChildren={
         <ProductDetails
           categories={categories}
-          // offerTags={offerTags}
+          offerTags={offerTags}
           storeUrl={params.storeUrl}
           // countries={countries}
         />
