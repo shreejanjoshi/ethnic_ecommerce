@@ -1,8 +1,8 @@
 import Link from "next/link";
 import UserMenu from "./user-menu/user-menu";
 import Cart from "./cart";
-// import DownloadApp from "./download-app";
-// import Search from "./search/search";
+import DownloadApp from "./download-app";
+import Search from "./search/search";
 import { cookies } from "next/headers";
 // import { Country } from "@/lib/types";
 // import CountryLanguageCurrencySelector from "./country-lang-curr-selector";
@@ -13,17 +13,17 @@ export default function Header() {
   const userCountryCookie = cookieStore.get("userCountry");
 
   // Set default country if cookie is missing
-//   let userCountry: Country = {
-//     name: "United States",
-//     city: "",
-//     code: "US",
-//     region: "",
-//   };
+  //   let userCountry: Country = {
+  //     name: "United States",
+  //     city: "",
+  //     code: "US",
+  //     region: "",
+  //   };
 
   // If cookie exists, update the user country
-//   if (userCountryCookie) {
-//     userCountry = JSON.parse(userCountryCookie.value) as Country;
-//   }
+  //   if (userCountryCookie) {
+  //     userCountry = JSON.parse(userCountryCookie.value) as Country;
+  //   }
 
   return (
     <div className="bg-gradient-to-r from-slate-500 to-slate-800">
@@ -38,11 +38,11 @@ export default function Header() {
               <Cart />
             </div>
           </div>
-          {/* <Search /> */}
+          <Search />
         </div>
         <div className="hidden lg:flex w-full lg:w-fit lg:mt-2 justify-end mt-1.5 pl-6">
           <div className="lg:flex">
-            {/* <DownloadApp /> */}
+            <DownloadApp />
           </div>
           {/* <CountryLanguageCurrencySelector userCountry={userCountry} /> */}
           <UserMenu />
