@@ -128,7 +128,8 @@ const OfferTagDetails: FC<OfferTagDetailsProps> = ({ data }) => {
               className="space-y-4"
             >
               <FormField
-                disabled={isLoading}
+                // @ts-ignore
+                readOnly={isLoading}
                 control={form.control}
                 name="name"
                 render={({ field }) => (
@@ -142,7 +143,8 @@ const OfferTagDetails: FC<OfferTagDetailsProps> = ({ data }) => {
                 )}
               />
               <FormField
-                disabled={isLoading}
+                // @ts-ignore
+                readOnly={isLoading}
                 control={form.control}
                 name="url"
                 render={({ field }) => (
