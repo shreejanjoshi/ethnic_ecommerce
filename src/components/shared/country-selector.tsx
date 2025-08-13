@@ -101,7 +101,8 @@ export default function CountrySelector({
               aria-activedescendant="listbox-option-3"
             >
               <div className="sticky top-0 z-10 bg-white">
-                <li className=" text-gray-900 cursor-default select-none relative py-2 px-3">
+                {/* text-gray-900 */}
+                <li className=" text-white cursor-default select-none relative py-2 px-3">
                   <input
                     type="search"
                     name="search"
