@@ -26,8 +26,8 @@ export default clerkMiddleware(async (auth, req, next) => {
   const countryCookie = req.cookies.get("userCountry");
 
   const DEFAULT_COUNTRY: Country = {
-    name: "United States",
-    code: "US",
+    name: "Belgium",
+    code: "BE",
     city: "",
     region: "",
   };
