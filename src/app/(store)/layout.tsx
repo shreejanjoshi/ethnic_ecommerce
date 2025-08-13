@@ -1,5 +1,5 @@
 // React
-import Header from "@/components/dashboard/store/layouts/header/header";
+import Header from "@/components/store/layouts/header/header";
 import { ReactNode } from "react";
 
 // Toaster
